@@ -27,6 +27,7 @@ type Profile struct {
 	IDUser     uint       `json:"id_user"`
 	Name       string     `json:"name"`
 	Gender     *string    `json:"gender,omitempty"`
+	Picture    *string    `json:"picture,omitempty"`
 	PlaceBirth *string    `json:"place_birth,omitempty"`
 	DateBirth  *time.Time `json:"date_birth,omitempty"`
 	CreatedAt  time.Time  `json:"created_at"`
@@ -43,9 +44,9 @@ type Session struct {
 }
 
 type UsersLog struct {
-	IDUser         uint       `json:"id_user"`
-	IDSession      *uint      `json:"id_session,omitempty"`
-	ActivityDetail string     `json:"activity_detail"`
-	IPAddress      *string    `json:"ip_address,omitempty"`
-	CreatedAt      time.Time  `json:"created_at"`
+	IDUser         uint      `json:"id_user"`
+	IDSession      *uint     `json:"id_session,omitempty"`
+	ActivityDetail string    `json:"activity_detail"`
+	IPAddress      *string   `json:"ip_address,omitempty"`
+	CreatedAt      time.Time `json:"created_at"`
 }
