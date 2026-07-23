@@ -1,5 +1,4 @@
 CREATE TABLE "carts_list" (
-    "id"          BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     "id_product"  BIGINT NOT NULL REFERENCES "products"("id"),
     "id_cart"     BIGINT NOT NULL REFERENCES "carts"("id") ON DELETE CASCADE,
     "qty"         INT NOT NULL CHECK ("qty" > 0),
