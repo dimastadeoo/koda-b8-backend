@@ -1,0 +1,16 @@
+CREATE TABLE "carts_list" (
+    "id"          BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    "id_product"  BIGINT NOT NULL REFERENCES "products"("id"),
+    "id_cart"     BIGINT NOT NULL REFERENCES "carts"("id") ON DELETE CASCADE,
+    "qty"         INT NOT NULL CHECK ("qty" > 0),
+    "status"      VARCHAR(20) NOT NULL DEFAULT 'active'
+                  CHECK ("status" IN ('active', 'not checked', 'checkout', 'sold out', 'not found')),
+    "created_at"  TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    "updated_at"  TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+-- trigger update
+CREATE TRIGGER "set_updated_at"
+BEFORE UPDATE ON "carts_list"
+FOR EACH ROW
+EXECUTE FUNCTION "trigger_set_updated_at"();

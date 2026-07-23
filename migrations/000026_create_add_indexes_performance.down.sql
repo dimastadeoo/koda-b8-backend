@@ -1,0 +1,12 @@
+DROP INDEX IF EXISTS "idx_sessions_user";
+DROP INDEX IF EXISTS "idx_users_logs_user";
+DROP INDEX IF EXISTS "idx_payment_trx_order";
+DROP INDEX IF EXISTS "idx_order_items_order";
+DROP INDEX IF EXISTS "idx_orders_status";
+DROP INDEX IF EXISTS "idx_orders_cart";
+DROP INDEX IF EXISTS "idx_carts_list_cart";
+DROP INDEX IF EXISTS "idx_reviews_product";
+DROP INDEX IF EXISTS "idx_img_product_product";
+DROP INDEX IF EXISTS "idx_product_spec_product";
+DROP INDEX IF EXISTS "idx_products_name";
+DROP INDEX IF EXISTS "idx_products_id_merk";
