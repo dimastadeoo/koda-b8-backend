@@ -3,7 +3,7 @@ CREATE TABLE "users" (
     "id_role"         BIGINT NOT NULL REFERENCES "roles"("id"),
     "password"        VARCHAR(255) NOT NULL,
     "email"           VARCHAR(150) NOT NULL UNIQUE,
-    "hp_number"       VARCHAR(20) NOT NULL UNIQUE,
+    "hp_number"       VARCHAR(20) UNIQUE,
     "status_account"  VARCHAR(20) NOT NULL DEFAULT 'active'
                       CHECK ("status_account" IN ('active', 'suspend', 'block')),
     "created_at"      TIMESTAMPTZ NOT NULL DEFAULT NOW(),
