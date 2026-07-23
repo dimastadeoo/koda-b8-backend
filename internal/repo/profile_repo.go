@@ -21,7 +21,7 @@ func NewProfileRepository(pool *pgxpool.Pool) ProfileRepository {
 
 func (r *profileRepo) Create(ctx context.Context, profile *models.Profile) error {
 	query := `INSERT INTO profiles (id_user, name, gender, picture, place_birth, date_birth)
-			  VALUES ($1, $2, $3, $4, $5) RETURNING id, created_at, updated_at`
+			  VALUES ($1, $2, $3, $4, $5, $6) RETURNING id, created_at, updated_at`
 	row := r.pool.QueryRow(ctx, query,
 		profile.IDUser,
 		profile.Name,

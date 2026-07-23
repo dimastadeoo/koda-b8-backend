@@ -14,7 +14,7 @@ type User struct {
 	IDRole        uint      `json:"id_role"`
 	Password      string    `json:"-"` // tidak muncul di JSON
 	Email         string    `json:"email"`
-	HpNumber      string    `json:"hp_number"`
+	HpNumber      *string    `json:"hp_number"`
 	StatusAccount string    `json:"status_account"`
 	CreatedAt     time.Time `json:"created_at"`
 	UpdatedAt     time.Time `json:"updated_at"`

@@ -56,7 +56,7 @@ func (s *authService) Register(ctx context.Context, req *models.RegisterRequest)
 		IDRole:        role.ID,
 		Password:      string(hashed),
 		Email:         req.Email,
-		HpNumber:      "", // bisa diisi nanti
+		HpNumber:      nil, // bisa diisi nanti
 		StatusAccount: "active",
 	}
 	err = s.userRepo.Create(ctx, user)
